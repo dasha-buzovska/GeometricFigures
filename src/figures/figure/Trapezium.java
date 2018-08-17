@@ -1,6 +1,9 @@
-package figures;
+package figures.figure;
 
+import figures.Color;
 import java.util.Random;
+import static figures.figure.Utils.RESET_COLOR;
+import static figures.figure.Utils.round;
 
 public class Trapezium extends Figure {
 
@@ -38,11 +41,20 @@ public class Trapezium extends Figure {
     @Override
     public void draw() {
         String type = "Type: trapezium";
-        String square = "square: " + getSquare();
-        String lines = "sides: (" + topBase + ", " + leftSide + ", " + bottomBase + ", " + rightSide + ")";
+        String square = "square: " + round(getSquare());
+        String lines = "sides: ("
+                + round(topBase) + ", "
+                + round(leftSide) + ", "
+                + round(bottomBase) + ", "
+                + round(rightSide) + ")";
         String color = "color: " + getColor();
 
-        System.out.println(type + ", " + square + ", " + lines + ", " + color + ";");
+        System.out.println(getColor().getCode()
+                + type + ", "
+                + square + ", "
+                + lines + ", "
+                + color + ";"
+                + RESET_COLOR);
     }
 
 }

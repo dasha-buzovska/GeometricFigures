@@ -1,4 +1,6 @@
-package figures;
+package figures.figure;
+
+import figures.Color;
 
 public abstract class Figure {
 
@@ -8,8 +10,8 @@ public abstract class Figure {
 
     private Color color;
 
-    public String getColor() {
-        return color.name();
+    public Color getColor() {
+        return color;
     }
 
     public abstract double getSquare();

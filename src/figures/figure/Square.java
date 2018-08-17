@@ -1,6 +1,11 @@
-package figures;
+package figures.figure;
+
+import figures.Color;
 
 import java.util.Random;
+
+import static figures.figure.Utils.RESET_COLOR;
+import static figures.figure.Utils.round;
 
 public class Square extends Figure {
 
@@ -19,15 +24,20 @@ public class Square extends Figure {
     @Override
     public void draw() {
         String type = "Type: square";
-        String square = "square: " + getSquare();
-        String side = "side: " + this.side;
+        String square = "square: " + round(getSquare());
+        String side = "side: " + round(this.side);
         String color = "color: " + getColor();
 
-        System.out.println(type + ", " + square + ", " + side + ", " + color + ";");
+        System.out.println(getColor().getCode()
+                + type + ", "
+                + square + ", "
+                + side + ", "
+                + color + ";"
+                + RESET_COLOR);
     }
-
 
     public static Square generate() {
         return new Square(Color.generateColor(), new Random().nextDouble()*20);
     }
+
 }

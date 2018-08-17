@@ -1,8 +1,11 @@
 package figures;
 
+import figures.figure.*;
+
 import java.util.Random;
 
 public class Generator {
+
     private static Random random = new Random();
 
     public static void generate() {
